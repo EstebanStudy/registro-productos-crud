@@ -43,8 +43,8 @@ Sigue estos pasos para poner el proyecto en marcha en tu máquina local.
 1. Clonar el repositorio
 Si usas Git, clona el repositorio. Si no, simplemente descarga el código fuente y descomprímelo.
 
-git clone https://github.com/tu-usuario/proyecto-crud-python.git
-cd proyecto-crud-python
+git clone https://github.com/EstebanStudy/registro-productos-crud.git
+cd registro-productos-crud.git
 
 2. Crear y activar un entorno virtual
 Es una buena práctica usar un entorno virtual para aislar las dependencias del proyecto de tu sistema global.
