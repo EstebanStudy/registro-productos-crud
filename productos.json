@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "nombre": "Lápiz profesional HB",
+        "descripcion": "Para dibujo técnico y artístico",
+        "precio": 3500.0,
+        "cantidad": 80
+    },
+    {
+        "id": 3,
+        "nombre": "Cuaderno profesional",
+        "descripcion": "100 hojas rayadas",
+        "precio": 12500.0,
+        "cantidad": 50
+    }
+]
