@@ -248,29 +248,24 @@ class ProductoManager:
             
         except Exception as e:
             return f"❌ Error generando estadísticas: {str(e)}"
-
-    # ===================== MÉTODOS COMPATIBLES CON TESTS EXISTENTES =====================
     
     def agregar(self, id: int, nombre: str, descripcion: str, precio: float, cantidad: int) -> str:
-        """Método compatible con tests existentes - alias de crear_producto."""
         return self.crear_producto(id, nombre, descripcion, precio, cantidad)
     
     def consultar(self, id: int) -> str:
-        """Método compatible con tests existentes - alias de leer_producto."""
         try:
             producto = self._obtener_producto_por_id(id)
             if producto:
                 return (f"Consultado: {id} -> {producto['nombre']} | "
-                       f"{producto['descripcion']} | "
-                       f"Precio: {producto['precio']} | "
-                       f"Cantidad: {producto['cantidad']}")
+                    f"{producto['descripcion']} | "
+                    f"Precio: {producto['precio']} | "
+                    f"Cantidad: {producto['cantidad']}")
             else:
                 return "Clave no encontrada"
         except Exception:
             return "Clave no encontrada"
     
     def modificar(self, id: int, nombre: str, descripcion: str, precio: float, cantidad: int) -> str:
-        """Método compatible con tests existentes - alias de actualizar_producto."""
         try:
             if not self._producto_existe(id):
                 return "Clave no encontrada"
@@ -299,7 +294,6 @@ class ProductoManager:
             return "Clave no encontrada"
     
     def eliminar(self, id: int) -> str:
-        """Método compatible con tests existentes - alias simplificado de eliminar_producto."""
         try:
             productos = self._cargar_productos()
             for i, producto in enumerate(productos):
@@ -313,26 +307,19 @@ class ProductoManager:
 
 # ===================== FUNCIONES GLOBALES PARA COMPATIBILIDAD =====================
 
-# Instancia global para compatibilidad con tests antiguos
 _manager_global = ProductoManager()
 
 def agregar(id: int, nombre: str, descripcion: str, precio: float, cantidad: int) -> str:
-    """Función global para compatibilidad con tests existentes."""
     return _manager_global.agregar(id, nombre, descripcion, precio, cantidad)
 
 def consultar(id: int) -> str:
-    """Función global para compatibilidad con tests existentes."""
     return _manager_global.consultar(id)
 
 def modificar(id: int, nombre: str, descripcion: str, precio: float, cantidad: int) -> str:
-    """Función global para compatibilidad con tests existentes."""
     return _manager_global.modificar(id, nombre, descripcion, precio, cantidad)
 
 def eliminar(id: int) -> str:
-    """Función global para compatibilidad con tests existentes."""
     return _manager_global.eliminar(id)
-
-# ===================== EJEMPLO DE USO MEJORADO =====================
 
 def demostrar_sistema():
     """Demuestra todas las funcionalidades del sistema."""

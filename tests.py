@@ -8,7 +8,6 @@ ARCHIVO_TEST = "test_productos.json"
 
 @pytest.fixture
 def manager():
-    """Fixture que proporciona un manager limpio para cada test."""
     manager = ProductoManager(ARCHIVO_TEST)
     # Limpiar archivo de test antes de cada test
     if os.path.exists(ARCHIVO_TEST):
